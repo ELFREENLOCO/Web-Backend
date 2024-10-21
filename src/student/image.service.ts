@@ -37,9 +37,15 @@ export class ImageService {
   }
 
   // Método para listar todos los archivos en el directorio `uploads`
-  getAllImages(): string[] {
+  //getAllImages(): string[] {
     // Lee los nombres de todos los archivos en la carpeta `uploads` y los devuelve como un array
-    return readdirSync(this.uploadPath);
+    //return readdirSync(this.uploadPath);
+ // }
+   // Método para listar todos los archivos en el directorio `uploads`
+   getAllImages() {
+    // Lee los nombres de todos los archivos en la carpeta `uploads` y los devuelve como un array
+    const files = readdirSync(this.uploadPath);
+    return { files };
   }
 
   // Método para eliminar una imagen por su nombre de archivo
